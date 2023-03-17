@@ -1,5 +1,6 @@
 import classes from "./Header.module.css";
 import HeaderCartButton from "../Cart/HeaderCartButton";
+import MealsImage from "../MealsImage.png"
 
 const Header = (props) => {
   return (
@@ -10,7 +11,7 @@ const Header = (props) => {
       </header>
       <div className={classes["main-image"]}>
         <img
-          src="https://raw.githubusercontent.com/academind/react-complete-guide-code/11-practice-food-order-app/extra-files/meals.jpg"
+          src={MealsImage}
           alt="Meals"
         />
       </div>
