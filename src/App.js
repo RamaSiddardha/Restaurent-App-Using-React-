@@ -1,8 +1,9 @@
-import Header from './Layout/Header';
+import Header from './Components/Layout/Header'
 import './App.css';
-import Meals from './Meals/Meals';
-import Cart from './Cart/Cart';
+import Meals from './Components/Meals/Meals';
+import Cart from './Components/Cart/Cart';
 import React from 'react';
+import Cartprovider from './Store/CartProvider';
 
 
 function App() {
@@ -16,14 +17,14 @@ const viewCartHandler = () =>{
 }
 
   return (
-    <>
+    <Cartprovider>
    {viewcart && <Cart closeCart={viewCartHandler}/>}
       <Header openCart={viewCartHandler}/>
       <main>
         <Meals/>
       </main>
 
-    </>
+      </Cartprovider>
   );
 }
 

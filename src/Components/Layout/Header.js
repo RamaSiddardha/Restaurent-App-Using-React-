@@ -1,6 +1,6 @@
 import classes from "./Header.module.css";
 import HeaderCartButton from "../Cart/HeaderCartButton";
-import MealsImage from "../MealsImage.png"
+import MealsImage from "../../Assets/MealsImage.png"
 
 const Header = (props) => {
   return (

@@ -4,8 +4,8 @@
     flex-wrap: nowrap;
     flex-direction: column;
     position: relative;
-    top: -114px;
-    right: -537px;
+    right: -31em;
+    top: -8em;
 }
   
   .form button {
