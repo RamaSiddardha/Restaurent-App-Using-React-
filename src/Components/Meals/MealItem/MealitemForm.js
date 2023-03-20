@@ -2,19 +2,19 @@ import React from 'react'
 
 import classes from './MealItemForm.module.css'
 import Input from '../../UI/Input'
-import CartContext from '../../../Store/cart-context'
+
 
 const MealItemForm =props =>{
     
-    const cartCtx = React.useContext(CartContext)
+    const refamount = React.useRef()
 
     const addItem = (e)=>{
         e.preventDefault()
-        cartCtx.addItem(props.item)
+        props.amountHandler(+refamount.current.value)
     }
 
-    return <form className={classes.form} >
-        <Input label='Amount' input={{
+    return <form  onSubmit={addItem} className={classes.form} >
+        <Input ref={refamount} label='Amount' input={{
             type :'amount_'+props.id,
             id : 'amount',
             min : '1',
@@ -22,7 +22,7 @@ const MealItemForm =props =>{
             step : '1',
             defaultValue : '1'
         }}/>
-        <button className={classes.button} onClick={addItem} >Add</button>
+        <button type='submit' className={classes.button} >Add</button>
     </form>
 }
 

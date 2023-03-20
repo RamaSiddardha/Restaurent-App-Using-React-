@@ -31,13 +31,23 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableMeals = (props) => {
-  const Meals = DUMMY_MEALS.map((meals) => <Mealitem name={meals.name} description={meals.description} price={meals.price} key={meals.id}/>);
+  const Meals = DUMMY_MEALS.map((meals) => (
+    <Mealitem
+      name={meals.name}
+      description={meals.description}
+      price={meals.price}
+      key={meals.id}
+      id ={meals.id}
+    />
+  ));
 
-  return <Card>
-    <section className={classes.meals}>
-      <ul>{Meals}</ul>
-    </section>
-  </Card>
+  return (
+    <Card>
+      <section className={classes.meals}>
+        <ul>{Meals}</ul>
+      </section>
+    </Card>
+  );
 };
 
 export default AvailableMeals;
